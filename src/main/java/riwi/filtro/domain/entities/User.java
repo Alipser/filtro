@@ -1,19 +1,18 @@
 package riwi.filtro.domain.entities;
 
-// import java.util.List;
-
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-// import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-// import lombok.EqualsAndHashCode;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-// import lombok.ToString;
+import lombok.ToString;
 import riwi.filtro.utils.enums.StatusEnum;
 
 @Entity (name ="users")
@@ -31,12 +30,12 @@ public class User {
     @Column(length = 100, nullable = false)
     private String email;
     
-    private StatusEnum rol;
+    private StatusEnum status;
 
-    // @ToString.Exclude
-    // @EqualsAndHashCode.Exclude                                     
-    // @OneToMany(mappedBy = "instructor")
-    // private List<Course> insTructingCourses;
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude                                     
+    @OneToMany(mappedBy = "creator")
+    private List<Survey> createdSurveys;
 
     // @ToString.Exclude
     // @EqualsAndHashCode.Exclude
