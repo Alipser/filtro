@@ -1,6 +1,6 @@
 package riwi.filtro.infraestructure.services;
 
-import org.springframework.beans.BeanUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.domain.Page;
@@ -15,8 +15,6 @@ import riwi.filtro.domain.entities.User;
 import riwi.filtro.domain.repositories.UserRespository;
 import riwi.filtro.infraestructure.abstractservices.IUserService;
 import riwi.filtro.utils.exceptcions.IdNotFoundException;
-import riwi.filtro.utils.parsers.ParserRoma;
-
 import static riwi.filtro.utils.parsers.ParserRoma.*;
 
 
