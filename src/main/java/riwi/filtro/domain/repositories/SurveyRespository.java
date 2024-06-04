@@ -8,5 +8,6 @@ import riwi.filtro.domain.entities.Survey;
 
 @Repository
 public interface SurveyRespository extends JpaRepository <Survey, Integer> {
+    public Survey findByTitle(String title);
 
 }
