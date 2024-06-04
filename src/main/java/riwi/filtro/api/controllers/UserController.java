@@ -57,5 +57,5 @@ public class UserController {
     public ResponseEntity<UserResponse> getMethodUsingId(@PathVariable int id) {
         return ResponseEntity.ok(userService.getById(id));
     }
-    
+
 }
