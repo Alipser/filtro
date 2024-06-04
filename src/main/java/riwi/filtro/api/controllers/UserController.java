@@ -32,7 +32,7 @@ public class UserController {
     @Autowired
     private final IUserService userService;
 
-    @GetMapping
+    @GetMapping("/class")
     public ResponseEntity<Page<UserResponse>> getAllUsers(
         @RequestParam(defaultValue = "1") int page,
         @RequestParam(defaultValue = "10") int size
@@ -40,33 +40,22 @@ public class UserController {
         return ResponseEntity.ok(this.userService.getAll(page - 1, size));
     }
 
-    @PostMapping("/create")
+    @PostMapping
     public ResponseEntity<UserResponse> postMethodName(@RequestBody @Validated UserRequest request) {      
         UserResponse response = userService.create(request);
         return ResponseEntity.ok(response);
     }
     
-    @PutMapping("update/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<UserResponse> putMethodName(@PathVariable int id, @RequestBody @Validated UserRequest request){
         UserResponse response = userService.update(request, id);
         return ResponseEntity.ok(response);
     }
 
 
-    @GetMapping("/getBy/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<UserResponse> getMethodUsingId(@PathVariable int id) {
         return ResponseEntity.ok(userService.getById(id));
-    }
-
-    @GetMapping("/getBy/{id}/submission")
-    public ResponseEntity<UserResponse> getMethodIdLessons(@PathVariable int id) {
-        return ResponseEntity.ok(userService.getById(id));
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deletedUsingId(@PathVariable int id) {
-        userService.delete(id);
-      return ResponseEntity.ok("Eliminated correctly");
     }
     
 }
