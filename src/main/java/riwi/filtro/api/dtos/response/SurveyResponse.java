@@ -12,7 +12,7 @@ import riwi.filtro.utils.enums.StatusEnum;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class SureveyResponse {
+public class SurveyResponse {
 
     private int id;
     private String title;

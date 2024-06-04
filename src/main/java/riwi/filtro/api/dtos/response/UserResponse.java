@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import riwi.filtro.domain.entities.Survey;
 import riwi.filtro.utils.enums.StatusEnum;
 
 @Data
@@ -19,5 +18,5 @@ public class UserResponse {
     private String password;
     private String email;
     private StatusEnum status;
-    private List<SureveyResponse> createdSurveys;
+    private List<SurveyResponse> createdSurveys;
 }
