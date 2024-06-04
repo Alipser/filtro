@@ -11,7 +11,7 @@ import riwi.filtro.utils.enums.StatusEnum;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class SurveryRequest {
+public class SurveyRequest {
     private int id;
     private String title;
     private String description;
