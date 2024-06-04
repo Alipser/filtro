@@ -19,6 +19,6 @@ public class QuestionResponse {
     private String text;
     private QusetionType type;
     private StatusEnum status;
-    private Survey survey;
+    private SurveyResponse survey;
     private List<OptionQuestionResponse> options;
 }

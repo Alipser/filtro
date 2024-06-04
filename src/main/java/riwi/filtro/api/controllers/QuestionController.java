@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,7 +34,7 @@ public class QuestionController {
     @Autowired
     private final IQuestionService questionService;
 
-    @GetMapping("/questions")
+    @GetMapping
     public ResponseEntity<Page<QuestionResponse>> getAllQuestions(
         @RequestParam(defaultValue = "1") int page,
         @RequestParam(defaultValue = "10") int size
@@ -58,5 +59,17 @@ public class QuestionController {
     public ResponseEntity<QuestionResponse> getMethodUsingId(@PathVariable int id) {
         return ResponseEntity.ok(questionService.getById(id));
     }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<QuestionResponse> patchMEthodUsingId(@PathVariable int id, @RequestBody String description) {
+        return ResponseEntity.ok(questionService.patchById(id, description));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteMappingUsingId(@PathVariable int id) {
+        questionService.delete(id);
+        return ResponseEntity.ok("Eliminated Succsefully");
+    }
+
 
 }
