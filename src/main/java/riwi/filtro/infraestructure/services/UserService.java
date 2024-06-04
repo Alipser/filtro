@@ -15,8 +15,6 @@ import riwi.filtro.domain.entities.User;
 import riwi.filtro.domain.repositories.UserRespository;
 import riwi.filtro.infraestructure.abstractservices.IUserService;
 import riwi.filtro.utils.exceptcions.IdNotFoundException;
-import riwi.filtro.utils.parsers.ParserRoma;
-
 import static riwi.filtro.utils.parsers.ParserRoma.*;
 
 
