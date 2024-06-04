@@ -17,7 +17,9 @@ public class ParserRoma {
     public static UserResponse convertUserToUserResponse(User entity){
         UserResponse response = new UserResponse();
         BeanUtils.copyProperties(entity, response);
-        response.setCreatedSurveys(entity.getCreatedSurveys().stream().map(e -> convertSurveyToSurveyResponse(e)).toList());
+        if(entity.getCreatedSurveys() != null){
+            response.setCreatedSurveys(entity.getCreatedSurveys().stream().map(e -> convertSurveyToSurveyResponse(e)).toList());
+        }
         return response;
     }
 
